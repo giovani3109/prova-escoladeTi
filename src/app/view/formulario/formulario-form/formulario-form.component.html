@@ -1,0 +1,37 @@
+<div class="container mt-3" [formGroup]="formularioGroup">
+  <div class="row">
+    <div class="col-9"><h3>Cadastro de CURRICULO</h3></div>
+    <div class="col-3">
+      <button
+        (click)="editando ? atualizar() : salvar()"
+        
+        type="button"
+        class="btn btn-dark"
+      >
+        Salvar
+      </button>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="row g-3">
+    <div class="col-sm-8">
+      <app-input type="text" label="Descrição" controlName="descricao"></app-input>
+      <div>
+        <app-input
+          type="text"
+          mask="00/00/0000"
+          label="Data Compra"
+          controlName="dataCompra"
+        ></app-input>
+        
+        <app-input type="text" label="Endereço" controlName="endereco"></app-input>
+        <hr/>
+        <h3>Adicionar Comodo</h3>
+        <app-input type="text" label="Nome" controlName="nome"></app-input>
+      </div>
+    </div>
+  </div>
+
+  

@@ -1,0 +1,54 @@
+<div class="container mt-3">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Descrição</th>
+        <th scope="col">Data Compra</th>
+        <th scope="col">Endereço</th>
+        <th scope="col">comodo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let formulario of formularios; let index = index">
+        <td>{{ formulario.descricao }}</td>
+        <td >{{ formulario.dataCompra}} </td>
+        <td>{{ formulario.endereco }}</td>
+        <td>{{ formulario.nome }}</td>
+        <td>
+          <button
+            routerLink="/formulario/visualizar/{{ formulario.id }}"
+            class="border-0 bg-transparent"
+          >
+            <i class="bi bi-eye"></i>
+          </button>
+
+          <button
+            routerLink="/formulario/responder/{{ formulario.id }}"
+            class="border-0 bg-transparent"
+          >
+            <i class="bi bi-question-diamond"></i>
+          </button>
+          <button
+            routerLink="/formulario/{{ formulario.id }}"
+            class="border-0 bg-transparent"
+          >
+            <i class="bi bi-pencil"></i>
+          </button>
+          <button
+            (click)="remover(formulario.id)"
+            class="border-0 bg-transparent"
+          >
+            <i class="bi bi-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button
+    type="button"
+    class="btn btn-primary mt-2"
+    routerLink="/formulario/novo"
+  >
+    Novo
+  </button>
+</div>
